@@ -1,10 +1,10 @@
 <p>
   test03 works!
-  <ng-template #name>
-    hello is template
+  <ng-template #name let-name="name">
+    hello is template ---- {{name}}
   </ng-template>
 
-  <ng-container *ngTemplateOutlet="name">
+  <ng-container *ngTemplateOutlet="name;context:{ name: 'xxxxx'}">
     this is container
   </ng-container>
   

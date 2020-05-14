@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, of,  } from 'rxjs';
-import { tap, startWith, map, delay, zip } from 'rxjs/operators';
+import { Subject, of, interval, Observable } from 'rxjs';
+import { tap, startWith, map, delay, zip, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs01',
@@ -10,6 +10,9 @@ import { tap, startWith, map, delay, zip } from 'rxjs/operators';
 export class Rxjs01Component implements OnInit {
 
   loading$: Subject<number> = new Subject<number>();
+
+  time!: Observable<any>; 
+  showTime!: Observable<boolean>; 
 
   constructor() { }
 
@@ -29,6 +32,11 @@ export class Rxjs01Component implements OnInit {
     example.subscribe((data) => {
       console.log(data)
     })
+
+
+    this.time = interval(1000).pipe(take(50));
+
+    this.showTime = this.time.pipe(map((val) => val < 10))
   }
 
 }

@@ -11,6 +11,8 @@ export class Test01Component implements OnInit, AfterViewInit {
 
   $loading: Subject<any>;
 
+  args = { age: 1, tag: 'span' };
+
   @ViewChild('name', { static: false }) name: ElementRef<HTMLSpanElement>;
 
   constructor() { }
