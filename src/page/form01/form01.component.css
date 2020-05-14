@@ -1,0 +1,3 @@
+fieldset[class*='ng-invalid'] + span{
+    color: #db0011;
+}

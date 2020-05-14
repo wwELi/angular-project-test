@@ -3,9 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
-  styleUrls: ['./page.component.css']
+  styleUrls: ['./page.component.less']
 })
 export class PageComponent implements OnInit {
+
+
+  isVercital: boolean = false;
 
   constructor() { }
 

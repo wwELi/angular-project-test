@@ -1,0 +1,20 @@
+<form novalidate [formGroup]="form" (submit)="submit()">
+  <button (click)="logForm()" type="button">logform</button>
+  <fieldset>
+    <input type="text" formControlName="name" placeholder="pls type www">
+  </fieldset>
+  <fieldset formGroupName="password">
+    <input type="password" formControlName="p1">
+    <input type="password" formControlName="p2">
+  </fieldset>
+  <span [hidden]="!form.hasError('pwd', 'password')">
+      {{form.getError('pwd', 'password')?.msg}}
+  </span>
+  <fieldset>
+      <button type="submit" [disabled]="form.invalid">Submit</button>
+    </fieldset>
+
+    Form status: {{form.status}}<br>
+    Form pristine: {{form.pristine}}<br>
+    Form touch: {{form.touched}}<br>
+</form>

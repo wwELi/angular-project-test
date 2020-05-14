@@ -1,0 +1,30 @@
+a {
+    margin-left: 20px;
+}
+
+.main {
+    margin-top: 20px;
+    display: flex;
+
+    .route {
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+        > a {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.vercital {
+    flex-direction: column;
+    .route {
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+
+.route + div{
+    flex: 1;
+}

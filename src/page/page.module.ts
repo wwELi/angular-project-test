@@ -1,3 +1,4 @@
+import { Form01Component } from './form01/form01.component';
 import { AuthInterceptor } from './auth-intercepor';
 import { Http01Service } from './http01.service';
 import { Http01Component } from './http01/http01.component';
@@ -11,13 +12,16 @@ import { CommonModule } from '@angular/common';
 import { PageComponent } from './page.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Pipe01Pipe } from './pipe01.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 
 @NgModule({
    imports: [
       CommonModule,
       PageRouteRoutes,
-      HttpClientModule
+      HttpClientModule,
+      FormsModule,
+      ReactiveFormsModule
    ],
    declarations: [
       PageComponent,
@@ -27,7 +31,8 @@ import { Pipe01Pipe } from './pipe01.pipe';
       Test03Component,
       Rxjs01Component,
       Http01Component,
-      Pipe01Pipe
+      Pipe01Pipe,
+      Form01Component
    ],
    providers: [
       Http01Service
