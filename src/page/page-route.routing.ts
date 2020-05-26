@@ -1,3 +1,4 @@
+import { Antd01Component } from './antd01/antd01.component';
 import { Form01Component } from './form01/form01.component';
 import { Http01Component } from './http01/http01.component';
 import { Rxjs01Component } from './rxjs01/rxjs01.component';
@@ -35,6 +36,10 @@ const routes: Routes = [
       { 
         path: 'form01',
         component: Form01Component
+       },
+      { 
+        path: 'antd01',
+        component: Antd01Component
        },
 
     ]

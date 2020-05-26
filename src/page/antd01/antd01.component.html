@@ -1,0 +1,18 @@
+
+<nz-checkbox-group [(ngModel)]="checkOptionsOne" (ngModelChange)="updateSingleChecked()"></nz-checkbox-group>
+<nz-table #basicTable [nzData]="listOfData" [nzBordered]="true" appResizeTable>
+  <thead>
+    <tr>
+      <th *ngFor="let header of headers;index as i;last as isLast" [style.position]="'relative'" #thTpl>
+        {{header.label}}
+        <span class="resize" (mousedown)="onMousedown(thTpl, $event)" *ngIf="!isLast"></span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of dataset">
+      <td *ngFor="let item of data">{{item}}</td>
+    </tr>
+  </tbody>
+</nz-table>
+<button [style.width.px]="200">xxxx</button>
