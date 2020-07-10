@@ -89,22 +89,6 @@ export class Antd01Component implements OnInit {
   }
 
   private initResize() {
-    fromEvent(document, 'mousemove')
-      .pipe(
-        throttleTime(10),
-        filter(() => this.isMousedown),
-        map((evt: MouseEvent) => evt.x),
-      )
-      .subscribe(nextX => {
-        const postionX = this.prevPostionx - nextX;
-        this.resizeTarget.style.width = `${this.resizeTarget.offsetWidth - postionX}px`;
-        this.prevPostionx = nextX;
-      })
-
-    fromEvent(document, 'mouseup')
-      .subscribe(() => {
-        this.isMousedown = false;
-      });
   }
 
   onMousedown(tpl: HTMLElement, evt: MouseEvent) {
